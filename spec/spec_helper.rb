@@ -39,4 +39,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Added to get Capybara DSL, which lets you run tests created with the command:
+  #             '$ rails g integration_test <controller_name>'
+  config.include Capybara::DSL
 end
