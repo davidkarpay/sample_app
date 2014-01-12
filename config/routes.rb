@@ -3,6 +3,8 @@ SampleApp::Application.routes.draw do
 # root to: 'static_pages#home' #matches '/'
   root :to => 'static_pages#home'
 
+  match '/signup', to: 'users#new', via: [:get, :post]
+
   match '/help', to: 'static_pages#help', via: [:get, :post]
   match '/about', to: 'static_pages#about', via: [:get, :post]
   match '/contact', to: 'static_pages#contact', via: [:get, :post]
