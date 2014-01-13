@@ -1,41 +1,49 @@
 require 'spec_helper'
 
-describe "Static pages" do
+describe "Static pages" do  #integration testing for static_pages controller
 
 #  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
-  subject { page }
+  subject { page } # Instead of page.should, allows "it" = page
 
-  shared_examples_for "all static pages" do
-    it { should have_selector('h1',   text: heading) }
+  shared_examples_for "all static pages" do  # allows for use of 'it_should_behave_like'
+    it { should have_selector('h1', text: heading) }
     it { should have_title(full_title(page_title)) }
   end
 
+    # Let the integration testing begin!
+
   describe "Home page" do
-    before { visit root_path }
-    let(:heading)    { 'Sample App' }
+    before { visit root_path } # do this b4 other tests
+    let(:heading)    { 'Sample App' } # local vars
     let(:page_title) { '' }
 
-    it_should_behave_like "all static pages"
+    it_should_behave_like "all static pages" # used with 'shared_examples_for'
 
     it { should_not have_title('| Home') }
   end
 
   describe "Help page" do
     before { visit help_path }
-    it { should have_selector('h1', text: 'Help')}
-    it { should have_title(full_title('Help'))}
+    let(:heading) { 'Help'}
+    let(:page_title) { 'Help' }
+
+    it_should_behave_like "all static pages"
   end
 
   describe "About page" do
     before { visit about_path }
-    it { should have_selector('h1', text: 'About Us')}
-    it { should have_title(full_title('About Us'))}
+    let(:heading) { 'About' }
+    let(:page_title) { 'About' }
+    
+    it_should_behave_like "all static pages"
   end
 
   describe "Contact page" do
     before { visit contact_path }
-    it { should have_selector('h1', text: 'Contact')}
-    it { should have_title(full_title('Contact'))}
+    let(:heading) { 'Contact' }
+    let(:page_title) { 'Contact' }
+    
+    it_should_behave_like "all static pages"
   end
 end
