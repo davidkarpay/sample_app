@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'annotate', '~> 2.4.1.beta'
   # The following optional lines are part of the advanced setup.
   # gem 'guard-rspec', '2.5.0'
   # gem 'spork-rails', '4.0.0'
