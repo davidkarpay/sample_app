@@ -16,6 +16,7 @@ gem 'protected_attributes'
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'annotate', '~> 2.4.1.beta'
+  gem 'hirb'
   # The following optional lines are part of the advanced setup.
   # gem 'guard-rspec', '2.5.0'
   # gem 'spork-rails', '4.0.0'
