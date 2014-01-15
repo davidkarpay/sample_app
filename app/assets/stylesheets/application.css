@@ -10,4 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *      ^^^^^^^<--- 'ensures that all CSS files in 
+ * 		app/assets/stylesheets (and this file)
+ *  directory (including the tree directories
+ *  are included in the application CSS.'
  */
