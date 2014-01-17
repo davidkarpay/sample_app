@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "User Pages" do
   
   subject { page } # defines 'it'
+  
   describe "profile page" do
   	let(:user) { FactoryGirl.create(:user) }
   	before { visit user_path(user) }
